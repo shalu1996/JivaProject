@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">JivaProject</string>
+    <string name="sell_my_produces">Sell my Produces</string>
+    <string name="gross_price">Gross Price</string>
+    <string name="applied_index">Applied loyalty index:</string>
+    <string name="mandi">Mandi</string>
+    <string name="gross_weight">Gross weight</string>
+    <string name="sell_more">Sell More</string>
+</resources>
