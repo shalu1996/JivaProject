@@ -146,7 +146,7 @@ fun SellProductScreen(navController: NavController, viewModel: SellerViewModel) 
         }
         Text(
             modifier = Modifier.padding(start = 5.dp),
-            text = "${stringResource(R.string.applied_index)}${loyaltyIndex.value}",
+            text = "${stringResource(R.string.applied_index)} ${loyaltyIndex.value}",
             color = Color.Green,
             fontSize = 14.sp
         )

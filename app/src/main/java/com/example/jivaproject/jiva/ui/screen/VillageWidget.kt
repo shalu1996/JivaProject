@@ -91,6 +91,9 @@ fun villageWidget(mVillages: MutableList<VillageTable>, onVillageSelected: (Stri
                 trailingIcon = {
                     Icon(icon, "contentDescription",
                         Modifier.clickable { mExpanded = !mExpanded })
+                },
+                placeholder = {
+                    Text("Enter the village name", color = Color.LightGray)
                 }
 
             )

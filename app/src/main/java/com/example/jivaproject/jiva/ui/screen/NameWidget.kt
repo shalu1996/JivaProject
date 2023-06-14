@@ -72,6 +72,9 @@ fun NameWidget(name: String, onValueChange: (String) -> Unit, onFocusChange: (Bo
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
                 shape = RoundedCornerShape(8.dp),
                 singleLine = true,
+                placeholder = {
+                    Text("Enter the name", color = Color.LightGray)
+                }
             )
         }
     }

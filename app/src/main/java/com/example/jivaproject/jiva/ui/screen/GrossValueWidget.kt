@@ -16,10 +16,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jivaproject.R
@@ -46,7 +49,7 @@ fun GrossValueWidget(value:String,onValueChange: (String) -> Unit) {
             TextField(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(16.dp),
+                    .padding(top =16.dp, start = 16.dp, end = 16.dp),
                 value = value,
                 colors = TextFieldDefaults.textFieldColors(
                     textColor = Color.Black,
@@ -61,6 +64,17 @@ fun GrossValueWidget(value:String,onValueChange: (String) -> Unit) {
                 },
                 shape = RoundedCornerShape(8.dp),
                 singleLine = true,
+                placeholder = {
+                    Text("Enter the value in Tonnes", color = Color.LightGray)
+                }
+            )
+            Text(
+                text = "Tonnes",
+                fontSize = 14.sp,
+                modifier = Modifier.align(Alignment.End).padding(end = 17.dp, top = 2.dp),
+                fontStyle = FontStyle.Normal,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.End,
             )
         }
     }

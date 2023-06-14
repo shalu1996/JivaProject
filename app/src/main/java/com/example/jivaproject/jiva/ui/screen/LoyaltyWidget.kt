@@ -72,6 +72,9 @@ fun LoyaltyCardWidget(
                 },
                 shape = RoundedCornerShape(8.dp),
                 singleLine = true,
+                placeholder = {
+                    Text("Enter the loyalty no", color = Color.LightGray)
+                }
             )
         }
     }
