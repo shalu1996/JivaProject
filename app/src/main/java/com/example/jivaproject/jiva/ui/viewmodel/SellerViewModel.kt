@@ -1,6 +1,5 @@
 package com.example.jivaproject.jiva.ui.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -32,7 +31,6 @@ class SellerViewModel @Inject constructor(
     fun getVillages() {
         viewModelScope.launch {
             villageUseCase.getVillages().collect {
-                Log.d("hbdc", it.toString())
                 _villages.postValue(it)
             }
         }
@@ -55,12 +53,30 @@ class SellerViewModel @Inject constructor(
         }
     }
 
+    fun insertRegisteredUsers() {
+        val list = ArrayList<SellerTable>()
+        var sellerTable = SellerTable("Shalini", "S12345", "Ramnagar")
+        list.add(sellerTable)
+        sellerTable = SellerTable("Abhishek", "S12789", "jamunanagar")
+        list.add(sellerTable)
+        sellerTable = SellerTable("Jitendra", "S98765", "Ghoshwari")
+        list.add(sellerTable)
+        sellerTable = SellerTable("Ravindra", "S76567", "Jasodhanagar")
+        list.add(sellerTable)
+        sellerTable = SellerTable("Kaushal", "S07654", "Saharanpur")
+        list.add(sellerTable)
+        viewModelScope.launch(CoroutineExceptionHandler { _, th ->
+            Timber.d("Exception in adding Seller $th")
+        }) {
+            sellerDetailUseCase.addSeller(list)
+        }
+    }
+
     fun addSeller(sellerTable: SellerTable) {
         viewModelScope.launch(CoroutineExceptionHandler { _, th ->
             Timber.d("Exception in adding Seller $th")
         }) {
-            sellerDetailUseCase.addSeller(sellerTable)
-            sellerDetailUseCase.addSeller(sellerTable)
+            sellerDetailUseCase.addSeller(listOf(sellerTable))
         }
     }
 

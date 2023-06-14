@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
@@ -37,7 +38,7 @@ fun ThankYouScreen(navController: NavController, viewModel: SellerViewModel) {
             .fillMaxHeight()
             .fillMaxWidth()
             .padding(16.dp)
-            .verticalScroll(ScrollState(0)),
+            .verticalScroll(rememberScrollState()),
     ) {
         Column(
             modifier = Modifier.align(Alignment.TopCenter),
@@ -50,18 +51,26 @@ fun ThankYouScreen(navController: NavController, viewModel: SellerViewModel) {
                     .padding(top = 30.dp)
             )
             Text(
-                text = "Thank you ${viewModel.sellerName} for selling your quality produce",
+                text = "${stringResource(id = R.string.thank_you)} ${viewModel.sellerName} ${
+                    stringResource(
+                        id = R.string.thank_you_2
+                    )
+                }",
                 fontSize = 30.sp,
-                modifier = Modifier.padding(top = 20.dp, start = 16.dp),
+                modifier = Modifier.padding(top = 20.dp),
                 fontStyle = FontStyle.Normal,
                 fontWeight = FontWeight.SemiBold,
                 lineHeight = 30.sp,
                 textAlign = TextAlign.Center
             )
             Text(
-                text = "Please ensure you received INR ${viewModel.grossPrice} for ${viewModel.grossValue} tonnes of your produce",
+                text = "${stringResource(id = R.string.receive_text_1)} ${viewModel.grossPrice} ${
+                    stringResource(
+                        id = R.string.receive_text_2
+                    )
+                } ${viewModel.grossValue} ${stringResource(id = R.string.receive_text_3)}",
                 fontSize = 14.sp,
-                modifier = Modifier.padding(top = 20.dp, start = 16.dp),
+                modifier = Modifier.padding(top = 20.dp),
                 fontStyle = FontStyle.Normal,
                 fontWeight = FontWeight.SemiBold,
                 textAlign = TextAlign.Center
@@ -76,7 +85,7 @@ fun ThankYouScreen(navController: NavController, viewModel: SellerViewModel) {
                 containerColor = darkGreen,
                 contentColor = Color.White
             ),
-            onClick = { navController.navigate("home") }) {
+            onClick = { navController.popBackStack() }) {
             Text(text = stringResource(R.string.sell_more), fontSize = 14.sp)
         }
     }

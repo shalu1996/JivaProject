@@ -18,7 +18,7 @@ interface SellerDao {
     suspend fun getSellerByLoyalty(loyalty: String): SellerTable?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertSeller(sellerTable: SellerTable)
+    suspend fun insertSeller(sellers: List<SellerTable>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertVillages(villages: List<VillageTable>)

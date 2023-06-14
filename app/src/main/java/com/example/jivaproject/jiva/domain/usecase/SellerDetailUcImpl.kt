@@ -1,6 +1,5 @@
 package com.example.jivaproject.jiva.domain.usecase
 
-import androidx.lifecycle.LiveData
 import com.example.jivaproject.jiva.data.model.SellerTable
 import com.example.jivaproject.jiva.data.repository.SellerDetailRepository
 import javax.inject.Inject
@@ -15,8 +14,7 @@ class SellerDetailUcImpl @Inject constructor(private val sellerDetailRepository:
         return sellerDetailRepository.getSellerDetailByLoyalty(loyalty)
     }
 
-    override suspend fun addSeller(sellerTable: SellerTable) {
-        sellerDetailRepository.insertSeller(sellerTable)
+    override suspend fun addSeller(sellerTable: List<SellerTable>) {
         sellerDetailRepository.insertSeller(sellerTable)
     }
 

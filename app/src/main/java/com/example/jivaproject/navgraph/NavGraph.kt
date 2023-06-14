@@ -7,14 +7,15 @@ import androidx.navigation.compose.composable
 import com.example.jivaproject.jiva.ui.screen.SellProductScreen
 import com.example.jivaproject.jiva.ui.screen.ThankYouScreen
 import com.example.jivaproject.jiva.ui.viewmodel.SellerViewModel
+import com.example.jivaproject.util.NavOption
 
 @Composable
 fun NavigationGraph(navController: NavHostController, viewModel: SellerViewModel) {
-    NavHost(navController, startDestination = "home") {
-        composable(route = "home") {
+    NavHost(navController, startDestination = NavOption.SELL_SCREEN.name) {
+        composable(route = NavOption.SELL_SCREEN.name) {
             SellProductScreen(navController,viewModel)
         }
-        composable(route = "thankyou") {
+        composable(route = NavOption.THANKYOU_SCREEN.name) {
             ThankYouScreen(navController,viewModel)
         }
     }

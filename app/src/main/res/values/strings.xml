@@ -6,4 +6,19 @@
     <string name="mandi">Mandi</string>
     <string name="gross_weight">Gross weight</string>
     <string name="sell_more">Sell More</string>
+    <string name="loyalty_card_identifier">Loyalty card identifier</string>
+    <string name="enter_the_value">Enter the value</string>
+    <string name="tonnes">Tonnes</string>
+    <string name="registered_user_toast">You are a registered user</string>
+    <string name="not_registered_toast">You are not a registered user</string>
+    <string name="please_select_village">Please select village</string>
+    <string name="enter_details">Please enter required Details</string>
+    <string name="inr">INR</string>
+    <string name="thank_you">Thank you</string>
+    <string name="thank_you_2">for selling your quality produce</string>
+    <string name="receive_text_1">Please ensure you received INR</string>
+    <string name="receive_text_2">for</string>
+    <string name="receive_text_3">tonnes of your produce</string>
+    <string name="seller_name">Seller name</string>
+    <string name="village">Village</string>
 </resources>

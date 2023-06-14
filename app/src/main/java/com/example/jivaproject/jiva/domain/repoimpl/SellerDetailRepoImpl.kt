@@ -1,6 +1,5 @@
 package com.example.jivaproject.jiva.domain.repoimpl
 
-import androidx.lifecycle.LiveData
 import com.example.jivaproject.jiva.data.model.SellerTable
 import com.example.jivaproject.jiva.data.repository.SellerDetailRepository
 import com.example.jivaproject.db.AppDatabase
@@ -27,7 +26,7 @@ class SellerDetailRepoImpl @Inject constructor(
         appDatabase.getSellerDao().insertVillages(villageTable)
     }
 
-    override suspend fun insertSeller(sellerTable: SellerTable) {
+    override suspend fun insertSeller(sellerTable: List<SellerTable>) {
         appDatabase.getSellerDao().insertSeller(sellerTable)
     }
 

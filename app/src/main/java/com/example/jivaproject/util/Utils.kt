@@ -24,8 +24,14 @@ fun randomNumberGenerator(): Int {
     val r = Random(System.currentTimeMillis())
     return (1 + r.nextInt(2)) * 10000 + r.nextInt(10000)
 }
-fun roundOff(value:Double): String {
+
+fun roundOff(value: Double): String {
     val df = DecimalFormat("#.##")
     df.roundingMode = RoundingMode.DOWN
     return df.format(value)
+}
+
+enum class NavOption {
+    SELL_SCREEN,
+    THANKYOU_SCREEN
 }

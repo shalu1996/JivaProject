@@ -29,17 +29,20 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.toSize
+import com.example.jivaproject.R
 import com.example.jivaproject.jiva.data.model.VillageTable
+import com.example.jivaproject.jiva.ui.theme.lightBlack
 import com.example.jivaproject.jiva.ui.theme.lightGreen
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun villageWidget(mVillages: MutableList<VillageTable>, onVillageSelected: (String,Double) -> Unit) {
+fun VillageWidget(mVillages: MutableList<VillageTable>, onVillageSelected: (String, Double) -> Unit) {
     Card(
         colors = CardDefaults.cardColors(containerColor = lightGreen),
         modifier = Modifier
@@ -50,10 +53,11 @@ fun villageWidget(mVillages: MutableList<VillageTable>, onVillageSelected: (Stri
     ) {
         Column(modifier = Modifier.padding(bottom = 20.dp)) {
             Text(
-                text = "Village",
+                text = stringResource(R.string.village),
                 fontSize = 16.sp,
                 modifier = Modifier.padding(top = 20.dp, start = 16.dp),
-                fontStyle = FontStyle.Italic
+                fontStyle = FontStyle.Italic,
+                color = lightBlack
             )
             var mExpanded by remember { mutableStateOf(false) }
             var mSelectedText by remember { mutableStateOf("") }
@@ -79,6 +83,7 @@ fun villageWidget(mVillages: MutableList<VillageTable>, onVillageSelected: (Stri
                     textColor = Color.Black,
                     containerColor = Color.White,
                     cursorColor = Color.Black,
+                    disabledTextColor = Color.Black,
                     disabledLabelColor = Color.Green,
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent
